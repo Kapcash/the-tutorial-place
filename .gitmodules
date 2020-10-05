@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = git@github.com:kapcash/the-tutorial-place-content.git

@@ -1,11 +1,9 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        the-tutorial-place
-      </h1>
-      <nuxt-content :document="document" />
+  <div>
+    <Logo />
+    <nuxt-content :document="hello" />
+    <div class="flex flex-wrap md:justify-start justify-around">
+      <ArticleCard v-for="article of articles" :key="article.title" :article="article" />
     </div>
   </div>
 </template>
@@ -16,58 +14,17 @@ import { Vue, Component } from 'vue-property-decorator'
 
 @Component
 export default class HomePage extends Vue {
-  document: any;
+  hello: any;
+  articles: any[] = [];
 
   async asyncData ({ $content }: Context) {
-    const document = await $content('hello').fetch()
+    const hello = await $content('hello').fetch()
+    const articles = await $content('articles', { deep: true }).sortBy('createdAt').without(['body']).limit(10).fetch()
 
-    return { document }
+    return { hello, articles }
   }
 }
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="postcss" scoped>
 </style>

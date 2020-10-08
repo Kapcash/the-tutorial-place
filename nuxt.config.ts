@@ -1,3 +1,5 @@
+import { IContentDocument } from '@nuxt/content/types/content'
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -17,6 +19,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '~/assets/css/index.scss'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -38,13 +41,29 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/dayjs'
   ],
+  dayjs: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    plugins: ['relativeTime']
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {},
+  hooks: {
+    'content:file:beforeInsert': (document: any) => {
+      document.tags = (document.tags as string | undefined)?.split(',').map(tag => tag.trim())
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend (config: any, ctx: any) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
   }
 }

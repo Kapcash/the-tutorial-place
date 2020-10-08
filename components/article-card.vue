@@ -19,24 +19,24 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator'
-import { IContentDocument } from '@nuxt/content/types/content'
+import { Vue, Component, Prop } from 'vue-property-decorator';
+import { IContentDocument } from '@nuxt/content/types/content';
 
 @Component
 export default class ArticleCard extends Vue {
   @Prop({ type: Object, required: true })
   article!: IContentDocument;
 
-  get authorPicture () {
-    return `https://github.com/${this.article.author?.toLowerCase()}.png`
+  get authorPicture() {
+    return `https://github.com/${this.article.author?.toLowerCase()}.png`;
   }
 
-  get fromNow () {
-    return this.$dayjs(this.article.createdAt).fromNow()
+  get fromNow() {
+    return this.$dayjs(this.article.createdAt).fromNow();
   }
 
-  get tags (): string[] {
-    return [...new Set(this.article.tags)]
+  get tags(): string[] {
+    return [...new Set(this.article.tags)];
   }
 }
 </script>

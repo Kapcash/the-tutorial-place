@@ -2,14 +2,72 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
   ],
   plugins: [
   ],
   // add your custom rules here
-  rules: {}
-}
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/member-delimiter-style': ['error'],
+    semi: 'off',
+    '@typescript-eslint/semi': ['error', 'always'],
+    'no-return-assign': ['error', 'except-parens'],
+    'comma-dangle': ['error', 'always-multiline'],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: true }],
+    'quote-props': ['error', 'as-needed'],
+    'space-before-function-paren': ['error', {
+      anonymous: 'never',
+      named: 'never',
+      asyncArrow: 'always',
+    }],
+    'import/no-mutable-exports': 'off',
+    'no-unused-vars': 'off',
+    'import/order': 'off',
+    'no-console': 'off',
+    camelcase: 'off',
+    'vue/no-deprecated-slot-attribute': 'warn',
+    'vue/no-static-inline-styles': ['warn', {
+      allowBinding: true,
+    }],
+    'vue/max-len': ['warn', {
+      code: 140,
+      template: 140,
+      tabWidth: 2,
+      comments: 120,
+      ignoreComments: false,
+      ignoreTrailingComments: true,
+      ignoreUrls: true,
+      ignoreStrings: false,
+      ignoreTemplateLiterals: false,
+      ignoreRegExpLiterals: false,
+      ignoreHTMLAttributeValues: false,
+      ignoreHTMLTextContents: false,
+    }],
+    'vue/no-irregular-whitespace': 'error',
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/name-property-casing': 'off',
+    'vue/attributes-order': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-closing-bracket-newline': ['error', {
+      singleline: 'never',
+      multiline: 'never',
+    }],
+    'unicorn/prefer-includes': 'warn',
+    'vue/html-quotes': ['error', 'double', { avoidEscape: false }],
+    'vue/html-closing-bracket-spacing': ['error', {
+      startTag: 'never',
+      endTag: 'never',
+      selfClosingTag: 'never',
+    }],
+    'vue/no-v-html': 'off',
+    'vue/html-indent': ['error', 2, {
+      alignAttributesVertically: false,
+      ignores: [],
+    }],
+  },
+};

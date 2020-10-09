@@ -1,10 +1,12 @@
-import { IContentDocument } from '@nuxt/content/types/content'
+import { IContentDocument } from '@nuxt/content/types/content';
 
 declare module '@nuxt/content/types/content' {
-  interface IContentDocument extends Record<string, any> {
+  interface IContentDocument {
     title?: string;
     author?: string;
     thumbnail?: string;
-    tags?: string[];
+    tags?: string;
+    // Transformed field from hook
+    topics?: string[];
   }
 }

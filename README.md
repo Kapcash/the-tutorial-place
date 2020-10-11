@@ -18,3 +18,16 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+- List of tags
+- Contribute link
+
+
+Article components:
+- Colored sidenote
+- 
+
+Footer: 
+- current version
+- 

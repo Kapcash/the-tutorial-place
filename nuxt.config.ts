@@ -15,18 +15,17 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Mali&display=swap' },
-
     ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
-    '~/assets/css/index.scss',
+    '~/assets/css/index.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '@/plugins/base',
+    '~/plugins/base',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -39,6 +38,9 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
+  tailwindcss: {
+    exposeConfig: true,
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -54,11 +56,11 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {
-    fullTextSearchFields: ['title', 'slug', 'tags'],
+    fullTextSearchFields: ['title', 'slug', 'topics'],
   },
   hooks: {
     'content:file:beforeInsert': (document: any) => {
-      document.topics = (document.tags as string | undefined)?.split(',').map(tag => tag.trim());
+      document.topics = (document.tags as string[] | undefined)?.join(', ');
     },
   },
 

@@ -4,7 +4,7 @@
     @input="$emit('input', $event.target.value)"
     type="search"
     autocomplete="off"
-    placeholder="Search by tag...">
+    :placeholder="placeholder">
 </template>
 
 <script lang="ts">
@@ -15,8 +15,11 @@ import { IContentDocument } from '@nuxt/content/types/content';
 export default class SearchBar extends Vue {
   @Prop({ type: String, required: true })
   readonly query!: string;
+
+  @Prop({ type: String, required: false, default: '' })
+  readonly placeholder!: string;
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 </style>

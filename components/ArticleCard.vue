@@ -6,7 +6,7 @@
       </h1>
       <div>
         <div class="flex items-center my-1">
-          <span v-for="tag of tags" :key="tag" class="mr-1 rounded-md bg-blue-100 text-blue-500 text-xs px-2">{{ tag }}</span>
+          <span v-for="tag of uniqTags" :key="tag" class="tag">{{ tag }}</span>
         </div>
         <div class="flex items-center justify-between">
           <div class="flex items-center mr-1 flex-normal">
@@ -23,11 +23,12 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { IContentDocument } from '@nuxt/content/types/content';
+import { OmitFromKnownKeys } from '@/types/base';
 
 @Component
 export default class ArticleCard extends Vue {
   @Prop({ type: Object, required: true })
-  article!: IContentDocument;
+  article!: OmitFromKnownKeys<IContentDocument, 'body'>;
 
   get authorPicture() {
     return `https://github.com/${this.article.author?.toLowerCase()}.png`;
@@ -37,8 +38,8 @@ export default class ArticleCard extends Vue {
     return this.$dayjs(this.article.createdAt).fromNow();
   }
 
-  get tags(): string[] {
-    return [...new Set(this.article.topics)];
+  get uniqTags(): string[] {
+    return [...new Set(this.article.tags)];
   }
 }
 </script>

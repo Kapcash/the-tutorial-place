@@ -1,6 +1,15 @@
 {
   "name": "the-tutorial-place",
   "version": "1.0.0",
+  "description": "A web site gathering development tutorials, written by the community. Every article can be subject to edits through pull requests.",
+  "keywords": ["tutorials", "nuxtjs", "github", "community", "content", "developers", "tech"],
+  "author": {
+    "name" : "Florent Catiau-Tristant",
+    "email" : "florent.ct@orange.fr"
+  },
+  "homepage": "https://github.com/Kapcash/the-tutorial-place",
+  "repository": "https://github.com/Kapcash/the-tutorial-place",
+  "license": "GNU GPLv3",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",

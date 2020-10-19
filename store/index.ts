@@ -8,6 +8,7 @@ export const state = () => ({
   tags: [] as string[],
   searchQuery: '',
   articles: [] as IContentDocument[],
+  categories: [] as IContentDocument[],
 });
 
 export const getters = getterTree(state, {
@@ -24,12 +25,19 @@ export const mutations = mutationTree(state, {
   setArticles(state, articles: IContentDocument[]) {
     state.articles = articles;
   },
+  setCategories(state, categories: IContentDocument[]) {
+    state.categories = categories;
+  },
 });
 
 export const actions = actionTree(
   { state, getters, mutations },
   {
-    async searchFor({ state, commit }, payload: string): Promise<void> {
+    async nuxtServerInit({ state }, { req }): Promise<void> {
+      const categories = await this.app.$content('tags').fetch();
+      this.app.$accessor.setCategories(categories);
+    },
+    async searchFor({ state }, payload: string): Promise<void> {
       this.app.$accessor.setSearchQuery(payload);
       if (payload) {
         const articles = await this.app.$content('articles', { deep: true })
@@ -43,7 +51,7 @@ export const actions = actionTree(
         return this.app.$accessor.getLightArticles();
       }
     },
-    async getLightArticles({ state, commit }): Promise<void> {
+    async getLightArticles({ state }): Promise<void> {
       const articles = await this.app.$content('articles', { deep: true })
         .sortBy('createdAt')
         .without(['body'])

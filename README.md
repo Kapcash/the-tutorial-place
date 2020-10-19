@@ -26,8 +26,13 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 Article components:
 - Colored sidenote
-- 
+- Prerequisites links
 
 Footer: 
 - current version
+
+
+Articles ideas:
+- Js array methods
+- Js complexe data structures
 - 

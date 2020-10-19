@@ -1,5 +1,5 @@
 <template>
-  <article class="max-w-xxs m-4 p-4 shadow-md bg-gray-100 border overflow-hidden rounded-lg hover:bg-white transition-colors duration-200">
+  <article class="w-64 m-4 p-4 shadow-md bg-gray-100 border overflow-hidden rounded-lg hover:bg-white transition-colors duration-200">
     <NuxtLink :to="{ path: article.path, params: { slug: article.slug } }" class="h-full flex flex-col justify-between">
       <h1 class="font-semibold text-xl leading-tight mb-3 l-clamp-3">
         {{ article.title }}

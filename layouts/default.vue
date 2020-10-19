@@ -4,11 +4,21 @@
     <main class="container mx-auto px-4 lg:px-8">
       <div class="relative main-grid">
         <Sidebar class="hidden"/>
-        <Nuxt class="flex flex-wrap w-full"/>
+        <Nuxt class="w-full"/>
       </div>
     </main>
   </div>
 </template>
+
+<script lang="ts">
+import { IContentDocument } from '@nuxt/content/types/content';
+import { Context } from '@nuxt/types';
+import { Vue, Component, Watch } from 'vue-property-decorator';
+
+@Component
+export default class DefaultLayout extends Vue {
+}
+</script>
 
 <style scoped>
 .main-grid {

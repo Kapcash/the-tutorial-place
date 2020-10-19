@@ -22,7 +22,10 @@ export default {
   css: [
     '~/assets/css/index.css',
   ],
-
+  env: {
+    homepage: process.env.npm_package_homepage,
+    contributeHomepage: 'https://github.com/Kapcash/the-tutorial-place-content',
+  },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/base',

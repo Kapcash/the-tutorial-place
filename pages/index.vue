@@ -12,7 +12,7 @@ import { Vue, Component, Watch } from 'vue-property-decorator';
 @Component
 export default class HomePage extends Vue {
   get articles(): IContentDocument[] {
-    return this.$accessor.articles;
+    return this.$accessor.displayedArticles;
   }
 
   asyncData({ $content, app }: Context) {

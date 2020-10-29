@@ -5,7 +5,14 @@
         <li v-for="category of categories" :key="category.slug">
           <h2 class="px-4 mt-4 uppercase font-semibold">{{ category.name }}</h2>
           <ul v-if="category.tags">
-            <li v-for="tag of category.tags" :key="tag" class="py-2 px-8 uppercase text-sm hover:bg-gray-200 cursor-pointer" :class="{'active': selectedTag === tag }" @click="selectTag(tag)">{{ tag }}</li>
+            <li
+              v-for="tag of category.tags"
+              :key="tag"
+              class="py-2 px-8 uppercase text-sm hover:bg-gray-200 cursor-pointer"
+              :class="{'active': $accessor.selectedTag === tag }"
+              @click="selectTag(tag)">
+              {{ tag }}
+            </li>
           </ul>
         </li>
       </ul>
@@ -20,14 +27,12 @@ import { Context } from '@nuxt/types';
 
 @Component
 export default class Sidebar extends Vue {
-  selectedTag: string | null = null;
-
   get categories(): IContentDocument[] {
     return this.$accessor.categories;
   };
 
   selectTag(tag: string) {
-    this.selectedTag = tag;
+    this.$accessor.selectTag(tag);
   }
 }
 </script>

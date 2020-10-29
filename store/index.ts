@@ -9,10 +9,17 @@ export const state = () => ({
   searchQuery: '',
   articles: [] as IContentDocument[],
   categories: [] as IContentDocument[],
+  selectedTag: null as string | null,
 });
 
 export const getters = getterTree(state, {
-  nbOfTags: state => state.tags.length,
+  displayedArticles: (state) => {
+    if (state.selectedTag) {
+      return state.articles.filter(article => article.tags?.includes(state.selectedTag!));
+    } else {
+      return state.articles;
+    }
+  },
 });
 
 export const mutations = mutationTree(state, {
@@ -21,6 +28,14 @@ export const mutations = mutationTree(state, {
   },
   setTags(state, tags: string[]) {
     state.tags = tags;
+  },
+  /** Select a tag to filter articles by */
+  selectTag(state, tag: string) {
+    if (state.selectedTag === tag) {
+      state.selectedTag = null;
+    } else {
+      state.selectedTag = tag;
+    }
   },
   setArticles(state, articles: IContentDocument[]) {
     state.articles = articles;

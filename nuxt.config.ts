@@ -24,6 +24,7 @@ export default {
   ],
   env: {
     homepage: process.env.npm_package_homepage,
+    version: process.env.npm_package_version,
     contributeHomepage: 'https://github.com/Kapcash/the-tutorial-place-content',
   },
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)

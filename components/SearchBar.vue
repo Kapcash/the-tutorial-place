@@ -7,7 +7,7 @@
       v-model="query"
       type="search"
       autocomplete="off"
-      class="my-auto h-8 block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-gray-700 dark:text-white dark-focus:text-white focus:border-gray-300 dark-focus:border-gray-700 rounded-md focus:outline-none focus:bg-white dark-focus:bg-gray-900 bg-gray-200 dark:bg-gray-800"
+      class="my-auto h-8 block w-full pl-10 pr-3 py-2 truncate leading-5 placeholder-gray-500 border border-transparent text-gray-700 focus:border-blue-300 rounded-md focus:outline-none focus:bg-white bg-gray-200 transition-colors duration-150"
       :placeholder="placeholder">
   </div>
 </template>

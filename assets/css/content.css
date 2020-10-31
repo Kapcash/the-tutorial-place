@@ -1,3 +1,4 @@
+/* Headers */
 .nuxt-content h1 {
   @apply text-3xl font-bold mb-3;
 }
@@ -10,15 +11,16 @@
 .nuxt-content h4 {
   @apply text-lg font-normal my-2;
 }
-
 .nuxt-content h5 {
   @apply text-base font-normal my-1;
 }
 
+/* Text content */
 .nuxt-content p {
   @apply text-base font-normal my-2;
 }
 
+/* Code blocks */
 .nuxt-content code, kbd, samp {
   @apply text-sm;
 }

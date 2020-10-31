@@ -10,6 +10,7 @@ export const state = () => ({
   articles: [] as IContentDocument[],
   categories: [] as IContentDocument[],
   selectedTag: null as string | null,
+  currentArticle: null as IContentDocument | null,
 });
 
 export const getters = getterTree(state, {
@@ -39,6 +40,9 @@ export const mutations = mutationTree(state, {
   },
   setArticles(state, articles: IContentDocument[]) {
     state.articles = articles;
+  },
+  setCurrentArticle(state, article: IContentDocument) {
+    state.currentArticle = article;
   },
   setCategories(state, categories: IContentDocument[]) {
     state.categories = categories;

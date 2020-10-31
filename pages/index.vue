@@ -4,7 +4,7 @@
       <ArticleCard v-for="article of articles" :key="article.title" :article="article"/>
     </div>
     <div v-show="articles.length <= 0">
-      <EmptyComponent/>
+      <EmptyState/>
     </div>
   </div>
 </template>

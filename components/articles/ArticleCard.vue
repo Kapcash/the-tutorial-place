@@ -1,6 +1,9 @@
 <template>
-  <article class="w-64 m-4 p-4 shadow-md bg-gray-100 border overflow-hidden rounded-lg hover:bg-white transition-colors duration-200">
-    <NuxtLink :to="{ path: article.path, params: { slug: article.slug } }" class="h-full flex flex-col justify-between">
+  <Card class="w-64 shadow-md hover:bg-white transition-colors duration-200">
+    <NuxtLink
+      :to="{ path: article.path, params: { slug: article.slug } }"
+      tag="article"
+      class="h-full flex flex-col justify-between">
       <h1 class="font-semibold text-xl leading-tight mb-3 l-clamp-3">
         {{ article.title }}
       </h1>
@@ -17,7 +20,7 @@
         </div>
       </div>
     </NuxtLink>
-  </article>
+  </Card>
 </template>
 
 <script lang="ts">
@@ -30,8 +33,12 @@ export default class ArticleCard extends Vue {
   @Prop({ type: Object, required: true })
   article!: OmitFromKnownKeys<IContentDocument, 'body'>;
 
+  get firstAuthor(): string {
+    return (this.article.author || '').split(',')[0].trim();
+  }
+
   get authorPicture() {
-    return `https://github.com/${this.article.author?.toLowerCase()}.png`;
+    return `https://github.com/${this.firstAuthor?.toLowerCase()}.png`;
   }
 
   get fromNow() {

@@ -2,6 +2,32 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  a {
+    @apply inline-block;
+  }
+
+  a:hover {
+    @apply cursor-pointer;
+  }
+
+  h1 {
+    @apply text-2xl font-bold mb-3;
+  }
+  h2 {
+    @apply text-xl font-semibold mb-3;
+  }
+  h3 {
+    @apply text-lg font-medium mb-2;
+  }
+  h4 {
+    @apply text-base font-normal mb-2;
+  }
+  h5 {
+    @apply text-base font-normal mb-1;
+  }
+}
+
 @layer utilities {
   .flex-normal {
     flex: 1 0 auto;
@@ -24,11 +50,19 @@
   .font-mali {
     font-family: 'Mali';
   }
-  .top-12 {
-    top: 2rem;
+  @responsive {
+    .top-12 {
+      top: 2rem;
+    }
+    .top-14 {
+      top: 2.5rem;
+    }
   }
 }
 
-.tag {
-  @apply inline-block mr-1 rounded-md bg-blue-100 text-blue-500 text-xs px-2;
+.shift-x-sm {
+  @apply transform duration-300 ease-in-out;
+  &:hover {
+    @apply translate-x-2;
+  }
 }

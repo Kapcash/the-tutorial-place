@@ -3,10 +3,13 @@
     <Navbar class="h-12"/>
     <main class="container mx-auto px-4 lg:px-8">
       <div class="relative main-grid">
-        <Sidebar class="hidden">
-          <TagsList/>
+        <Sidebar>
+          <ArticleActions/>
         </Sidebar>
         <Nuxt class="w-full"/>
+        <Sidebar>
+          <ArticleDetails/>
+        </Sidebar>
       </div>
     </main>
   </div>
@@ -18,12 +21,13 @@ import { Context } from '@nuxt/types';
 import { Vue, Component, Watch } from 'vue-property-decorator';
 
 @Component
-export default class DefaultLayout extends Vue {}
+export default class DefaultLayout extends Vue {
+}
 </script>
 
 <style scoped>
 .main-grid {
   @apply grid gap-4;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 4fr 2fr;
 }
 </style>

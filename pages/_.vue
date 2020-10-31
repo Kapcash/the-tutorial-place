@@ -10,7 +10,9 @@ import { IContentDocument } from '@nuxt/content/types/content';
 import { Context } from '@nuxt/types';
 import { Vue, Component } from 'vue-property-decorator';
 
-@Component
+@Component({
+  layout: 'article',
+})
 export default class ArticlePage extends Vue {
   article!: IContentDocument;
 
@@ -29,13 +31,15 @@ export default class ArticlePage extends Vue {
     };
   }
 
-  async asyncData({ $content, params, error }: Context) {
+  async asyncData({ $content, app, params, error }: Context) {
     const path = `/${params.pathMatch || 'index'}`;
     const [article] = await $content({ deep: true }).where({ path }).fetch() as IContentDocument[];
 
     if (!article) {
       return error({ statusCode: 404, message: 'Article not found' });
     }
+
+    app.$accessor.setCurrentArticle(article);
 
     return { article };
   }

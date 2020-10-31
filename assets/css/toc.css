@@ -1,0 +1,16 @@
+/* Table of content */
+.toc li {
+  @apply my-2;
+}
+.toc li:first-child {
+  @apply mt-0;
+}
+.toc li:last-child {
+  @apply mb-0;
+}
+.toc .toc-2 {
+
+}
+.toc .toc-3 {
+  @apply pl-4;
+}

@@ -7,7 +7,7 @@
           <ArticleActions/>
         </Sidebar>
         <Nuxt class="w-full"/>
-        <Sidebar>
+        <Sidebar sticky>
           <ArticleDetails/>
         </Sidebar>
       </div>

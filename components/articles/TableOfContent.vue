@@ -1,5 +1,6 @@
 <template>
   <Card class="">
+    <h3>Table of content</h3>
     <ul class="toc">
       <li
         v-for="link of article.toc"

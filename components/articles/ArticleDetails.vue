@@ -1,7 +1,7 @@
 <template>
   <div>
-    <TableOfContent :article="currentArticle"/>
-    <LazyStackOverflowLinks v-if="sofLinks" :links="sofLinks"/>
+    <TableOfContent :article="currentArticle" class="bg-white"/>
+    <LazyStackOverflowLinks v-if="sofLinks" :links="sofLinks" class="bg-white"/>
   </div>
 </template>
 

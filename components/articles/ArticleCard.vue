@@ -1,5 +1,5 @@
 <template>
-  <Card class="w-64 shadow-md hover:bg-white transition-colors duration-200">
+  <Card class="bg-gray-100 w-64 shadow-md hover:bg-white transition-colors duration-200">
     <NuxtLink
       :to="{ path: article.path, params: { slug: article.slug } }"
       tag="article"

@@ -1,5 +1,5 @@
 <template>
-  <aside class="lg:block fixed lg:relative inset-0 mt-12 border-r border-gray-400 lg:mt-0 z-30 w-full hidden bg-gray-100">
+  <aside class="lg:block fixed lg:relative inset-0 mt-12 lg:mt-0 z-30 w-full hidden">
     <div class="h-full lg:top-14" :class="{ 'lg:sticky max-h overflow-y-auto': sticky }">
       <slot/>
     </div>

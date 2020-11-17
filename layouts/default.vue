@@ -2,11 +2,11 @@
   <div class="pt-12">
     <Navbar class="h-12"/>
     <main class="container mx-auto px-4 lg:px-8">
-      <div class="relative main-grid">
-        <Sidebar class="hidden">
+      <div class="relative grid main-grid-template">
+        <Sidebar class="hidden bg-gray-100">
           <TagsList/>
         </Sidebar>
-        <Nuxt class="w-full"/>
+        <Nuxt class="w-full px-4"/>
       </div>
     </main>
   </div>
@@ -22,8 +22,7 @@ export default class DefaultLayout extends Vue {}
 </script>
 
 <style scoped>
-.main-grid {
-  @apply grid gap-4;
+.main-grid-template {
   grid-template-columns: 1fr 3fr;
 }
 </style>

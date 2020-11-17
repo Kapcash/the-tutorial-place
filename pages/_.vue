@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink :to="{ name: 'index' }">Go home</NuxtLink>
+    <h1>{{ article.title }}</h1>
     <NuxtContent :document="article"/>
   </div>
 </template>
@@ -47,4 +47,7 @@ export default class ArticlePage extends Vue {
 </script>
 
 <style lang="postcss" scoped>
+h1 {
+  @apply text-3xl font-bold mb-3;
+}
 </style>

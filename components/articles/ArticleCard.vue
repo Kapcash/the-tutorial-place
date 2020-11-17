@@ -3,7 +3,7 @@
     <NuxtLink
       :to="{ path: article.path, params: { slug: article.slug } }"
       tag="article"
-      class="h-full flex flex-col justify-between">
+      class="h-full flex flex-col justify-between cursor-pointer">
       <h1 class="font-semibold text-xl leading-tight mb-3 l-clamp-3">
         {{ article.title }}
       </h1>

@@ -1,0 +1,20 @@
+.underliner {
+  @apply relative z-0;
+  &:after {
+    @apply absolute right-0 w-full bg-gray-300;
+    content: "";
+    bottom: 1%;
+    left: 15%;
+    height: 30%;
+    z-index: -1;
+  }
+}
+
+.underliner.orange {
+  &:after {
+    @apply bg-orange-400 transition-colors duration-200;
+  }
+  &:hover:after {
+    @apply bg-orange-300;
+  }
+}

@@ -1,7 +1,7 @@
 <template>
   <div>
     <TableOfContent :article="currentArticle"/>
-    <StackOverflowLinks :article="currentArticle"/>
+    <LazyStackOverflowLinks v-if="sofLinks" :links="sofLinks"/>
   </div>
 </template>
 
@@ -14,6 +14,10 @@ import { Context } from '@nuxt/types';
 export default class ArticleDetails extends Vue {
   get currentArticle(): IContentDocument {
     return this.$accessor.currentArticle!;
+  }
+
+  get sofLinks(): string[] {
+    return this.currentArticle.stackoverflow || [];
   }
 }
 </script>

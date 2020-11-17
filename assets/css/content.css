@@ -16,7 +16,7 @@
 }
 
 /* Adds an invisible margin-top for titles anchors to scroll properly */
-.nuxt-content h1, h2, h3, h4, h5 {
+.nuxt-content h1, .nuxt-content h2, .nuxt-content h3, .nuxt-content h4, .nuxt-content h5 {
   &:before {
     display: block;
     content: "";

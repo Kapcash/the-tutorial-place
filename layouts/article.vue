@@ -3,7 +3,7 @@
     <Navbar class="h-12"/>
     <main class="container mx-auto px-4 lg:px-8">
       <div class="relative main-grid">
-        <Sidebar>
+        <Sidebar sticky>
           <ArticleActions/>
         </Sidebar>
         <Nuxt class="w-full"/>
@@ -21,8 +21,7 @@ import { Context } from '@nuxt/types';
 import { Vue, Component, Watch } from 'vue-property-decorator';
 
 @Component
-export default class DefaultLayout extends Vue {
-}
+export default class DefaultLayout extends Vue {}
 </script>
 
 <style scoped>

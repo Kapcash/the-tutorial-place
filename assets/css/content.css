@@ -27,6 +27,17 @@
   }
 }
 
+.nuxt-content h1, .nuxt-content h2, .nuxt-content h3 {
+  position: relative;
+}
+
+.nuxt-content h1 > a, .nuxt-content h2 > a, .nuxt-content h3 {
+  position: absolute;
+  width: 100%;
+  height: 1.5rem;
+  bottom: 0.5rem;
+}
+
 /* Text content */
 .nuxt-content p {
   @apply text-base font-normal my-2;

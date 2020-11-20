@@ -1532,10 +1532,10 @@
     webpack-node-externals "^2.5.2"
     webpackbar "^4.0.0"
 
-"@nuxtjs/dayjs@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/dayjs/-/dayjs-1.2.0.tgz#5c2ddb45092187532926469f3b825bce003f19e9"
-  integrity sha512-3SmiHKV8yaMAKII9pj7iYdboH8Xi9ekIXb21JaAQV+qIpLnb107w1EAO1y9Mylc0VVRA0GvxCHr9crPZ7cuuZw==
+"@nuxtjs/dayjs@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/dayjs/-/dayjs-1.2.1.tgz#282e9c12f2a2ccdfcdaf0766c0d482ff350fa2e8"
+  integrity sha512-Gzhh+ZEcFSP0o/Cn7Yz8R8cOoM1KuoH7mzW0udJiKlgtbSRzfO4OWlUKkf4fCLeiB8emP5shTVOmFT8t4fIMuA==
   dependencies:
     consola "^2.3.2"
     dayjs "^1.8.9"

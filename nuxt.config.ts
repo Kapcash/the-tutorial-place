@@ -1,4 +1,4 @@
-import { IContentDocument } from '@nuxt/content/types/content';
+import { NuxtConfig } from '@nuxt/types';
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -30,6 +30,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/base',
+    '~/plugins/domain.client',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -50,6 +51,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/dayjs',
+    'vue-social-sharing/nuxt',
   ],
   dayjs: {
     locales: ['en', 'fr'],
@@ -75,4 +77,4 @@ export default {
       }
     },
   },
-};
+} as NuxtConfig;

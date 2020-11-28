@@ -1,10 +1,8 @@
 import { getAccessorType, getterTree, mutationTree, actionTree } from 'typed-vuex';
 import { IContentDocument } from '@nuxt/content/types/content';
 
-// Keep your existing vanilla Vuex code for state, getters, mutations, actions, plugins, etc.
-// ...
-
 export const state = () => ({
+  domainName: '',
   tags: [] as string[],
   searchQuery: '',
   articles: [] as IContentDocument[],
@@ -24,6 +22,9 @@ export const getters = getterTree(state, {
 });
 
 export const mutations = mutationTree(state, {
+  setDomain(state, domain: string) {
+    state.domainName = domain;
+  },
   setSearchQuery(state, query: string) {
     state.searchQuery = query;
   },
@@ -81,7 +82,6 @@ export const actions = actionTree(
   },
 );
 
-// This compiles to nothing and only serves to return the correct type of the accessor
 export const accessorType = getAccessorType({
   state,
   getters,

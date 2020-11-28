@@ -9,7 +9,7 @@ declare module '@nuxt/content/types/content' {
     author?: string;
     thumbnail?: string;
     tags?: string[];
-    stackoverflow: string[];
+    stackoverflow?: string[];
   }
 }
 

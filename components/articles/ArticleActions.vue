@@ -16,7 +16,16 @@
           l106.066,106.066L431.356,186.705z"/>
       </svg>
     </a>
-    <a href="" target="_blank" class="m-12">
+    <ShareButton/>
+    <!-- <ShareNetwork
+      network="facebook"
+      url="https://news.vuejs.org/issues/180"
+      title="Say hi to Vite! A brand new, extremely fast development setup for Vue."
+      description="This week, I’d like to introduce you to 'Vite', which means 'Fast'. It’s a brand new development setup created by Evan You."
+      quote="The hot reload is so fast it\'s near instant. - Evan You"
+      hashtags="vuejs,vite"
+      class="m-12">
+      Share on Facebook
       <svg style="fill: #324575;" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 512.001 512.001" xml:space="preserve">
         <path d="M404.99,344.077c-26.743,0-50.588,12.583-65.974,32.124l-154.093-88.964c3.888-9.662,6.049-20.198,6.049-31.236
           c0-11.037-2.162-21.573-6.049-31.236l154.093-88.964c15.387,19.54,39.231,32.124,65.974,32.124
@@ -33,7 +42,7 @@
         <path d="M107.011,220.606c-19.516,0-35.394,15.877-35.394,35.394c0,6.573,5.329,11.904,11.904,11.904s11.904-5.331,11.904-11.904
           c0-6.389,5.197-11.586,11.586-11.586c6.574,0,11.904-5.331,11.904-11.904C118.915,225.936,113.585,220.606,107.011,220.606z"/>
       </svg>
-    </a>
+    </ShareNetwork> -->
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 <template>
   <div @mouseleave="showShareIcons = false">
     <button @click="share">
+      <SvgIcon icon="share"/>
       <svg style="fill: #324575;" version="1.1" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 512.001 512.001" xml:space="preserve">
         <path d="M404.99,344.077c-26.743,0-50.588,12.583-65.974,32.124l-154.093-88.964c3.888-9.662,6.049-20.198,6.049-31.236
           c0-11.037-2.162-21.573-6.049-31.236l154.093-88.964c15.387,19.54,39.231,32.124,65.974,32.124
@@ -27,7 +28,7 @@
           :description="shareDescription"
           :quote="shareQuote"
           :hashtags="shareHashtags">
-          <img :src="require(`~/assets/svg/${socialNetwork}.svg`)">
+          <img :src="require(`~/assets/svg/networks/${socialNetwork}.svg`)">
         </ShareNetwork>
       </div>
     </div>

@@ -41,6 +41,7 @@ export default {
     '@nuxt/typescript-build',
     'nuxt-typed-vuex',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/svg',
   ],
   tailwindcss: {
     exposeConfig: true,

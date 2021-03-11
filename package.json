@@ -33,7 +33,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/dayjs": "^1.2.0",
     "core-js": "^3.7.0",
-    "nuxt": "^2.14.5",
+    "nuxt": "^2.15.3",
     "vue-social-sharing": "^3.0.3"
   },
   "devDependencies": {
